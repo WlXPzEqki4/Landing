@@ -1,0 +1,51 @@
+﻿projectId,sectionName,content,order,suborder
+WILDCARDS - Most Dangerous Ideas 2025,Research Methods,Data Collection,1,0
+WILDCARDS - Most Dangerous Ideas 2025,Research Methods,Survey Design,1,1
+WILDCARDS - Most Dangerous Ideas 2025,Research Methods,Analysis Framework,2,0
+WILDCARDS - Most Dangerous Ideas 2025,Findings,Key Insights,1,0
+WILDCARDS - Most Dangerous Ideas 2025,Findings,Statistical Analysis,1,1
+WIP WILDCARDS - Most Dangerous Ideas 2025,Development Status,Current Progress,1,0
+WIP WILDCARDS - Most Dangerous Ideas 2025,Development Status,Completed Modules,1,1
+WIP WILDCARDS - Most Dangerous Ideas 2025,Development Status,Pending Features,2,0
+WIP WILDCARDS - Most Dangerous Ideas 2025,Roadmap,Phase 1 Goals,1,0
+WIP WILDCARDS - Most Dangerous Ideas 2025,Roadmap,Phase 2 Plans,2,0
+Pattern of Life,Description,"A sophisticated intelligence platform that analyses Mobile Advertising ID (MAID) data to uncover behavioural patterns, routines, and anomalies through multi-layered temporal and spatial analysis.",1,0
+Pattern of Life,Key Features,Multi-dimensional behavioural sequence analysis via sunburst diagrams,2,0
+Pattern of Life,Key Features,"Temporal pattern detection across hourly, weekly, and monthly scales",2,1
+Pattern of Life,Key Features,Geospatial activity mapping with heatmaps and clustering,2,2
+Pattern of Life,Key Features,Advanced anomaly detection in routine behaviours,2,3
+Pattern of Life,Key Features,Dynamic visualisation of movement patterns and transitions,2,4
+Pattern of Life,Technical Stack,"Built on Chart.js, D3.js, and Leaflet for comprehensive data visualisation. Architecture emphasises efficient CSV processing through PapaParse, with modular components supporting real-time analysis of large-scale behavioural datasets.",3,0
+Pattern of Life,Implementation,"Designed for intelligence and security professionals requiring detailed pattern-of-life analysis. Primary applications include behavioural monitoring, anomaly detection, and strategic planning.",4,0
+Narrative Analysis,Description,"An advanced analytical platform that transforms large article datasets into intelligence-grade narrative insights, enabling detection of thematic patterns, relationships, and temporal evolution through multi-dimensional visualisation.",1,0
+Narrative Analysis,Key Features,Dominant narrative identification and strength scoring,2,0
+Narrative Analysis,Key Features,Multi-dimensional network visualisation in 2D/3D,2,1
+Narrative Analysis,Key Features,Temporal pattern tracking and thematic evolution analysis,2,2
+Narrative Analysis,Key Features,Cross-narrative correlation and co-occurrence mapping,2,3
+Narrative Analysis,Key Features,Advanced term clustering and relationship detection,2,4
+Narrative Analysis,Technical Stack,"Built on React with D3.js, Recharts, and Plotly for sophisticated data visualisation. Architecture prioritises modular components, real-time processing, and scalable data handling, supporting complex narrative analysis through interactive exploration tools.",3,0
+Narrative Analysis,Implementation,"Designed for intelligence analysts, journalists, researchers, and policy advisors requiring deep narrative analysis. Primary applications include strategic intelligence, trend analysis, and relationship mapping.",4,0
+Streamlit MAID app,Description,"An advanced intelligence analysis platform that transforms Mobile Advertising ID data into comprehensive network and behavioural insights, enabling deep pattern recognition and relationship mapping for intelligence operations.",1,0
+Streamlit MAID app,Key Features,Multi-layered pattern discovery from surface to deep behavioural indicators,2,0
+Streamlit MAID app,Key Features,Network relationship mapping and hidden connection detection,2,1
+Streamlit MAID app,Key Features,Bed-down location identification and transit route analysis,2,2
+Streamlit MAID app,Key Features,Pattern-of-life development through temporal rhythm analysis,2,3
+Streamlit MAID app,Key Features,Advanced algorithmic pattern detection across large datasets,2,4
+Streamlit MAID app,Technical Stack,"Built on an extensible, modular architecture supporting high-performance pattern recognition and real-time analysis of complex network relationships. Implementation prioritises security, scalability, and rapid deployment of specialised analytical capabilities.",3,0
+Streamlit MAID app,Implementation,"Designed for intelligence agencies, law enforcement, and counter-terrorism units requiring sophisticated pattern analysis. Primary applications include network discovery, behavioural analysis, and threat detection.",4,0
+Daily Route,Description,"A sophisticated intelligence visualisation tool that transforms Mobile Advertising ID data into interactive spatiotemporal visualisations, enabling detailed analysis of movement patterns and behavioural trends.",1,0
+Daily Route,Key Features,Real-time animation of movement routes with customisable temporal markers,2,0
+Daily Route,Key Features,Geospatial mapping with heatmaps and 3D hexagonal overlays,2,1
+Daily Route,Key Features,Temporal analysis through interactive timestamps and event tracking,2,2
+Daily Route,Key Features,CSV data ingestion and processing via PapaParse,2,3
+Daily Route,Key Features,"Advanced spatial calculations using Mapbox GL, Turf.js and H3",2,4
+Daily Route,Technical Stack,"Platform architecture prioritises modular components and high-performance processing of large-scale datasets, with emphasis on real-time visualisation and interactive analysis capabilities.",3,0
+Daily Route,Implementation,"Designed for intelligence operations requiring detailed movement analysis and pattern identification. Primary use cases include surveillance operations, behavioural analysis, and strategic planning.",4,0
+MALL 2 - ScrollyTelling,Description,"An interactive intelligence reporting platform that transforms static OSINT data into dynamic visualisations, integrating geospatial analysis, network mapping, and multimedia elements to track Subjects of Interest (SOIs) and their activities.",1,0
+MALL 2 - ScrollyTelling,Key Features,Interactive mapping with customisable overlays and Street View integration,2,0
+MALL 2 - ScrollyTelling,Key Features,Network visualisation of SOI relationships and behavioural patterns,2,1
+MALL 2 - ScrollyTelling,Key Features,"Multimedia integration (surveillance imagery, audio, video)",2,2
+MALL 2 - ScrollyTelling,Key Features,AI-driven analysis tools and interactive case summaries,2,3
+MALL 2 - ScrollyTelling,Key Features,Real-time collaboration across jurisdictions,2,4
+MALL 2 - ScrollyTelling,Technical Stack,"Modular architecture supporting dynamic data exploration and multi-source intelligence integration. Features secure data handling, case management tools, and cross-platform collaboration capabilities, with emphasis on real-time visualisation and analysis.",3,0
+MALL 2 - ScrollyTelling,Implementation,"Designed for intelligence analysts tracking SOIs across multiple jurisdictions. Primary applications include narcotics trafficking network analysis, suspicious activity monitoring, and operational gap identification.",4,0

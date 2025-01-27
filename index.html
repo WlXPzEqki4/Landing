@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="toggle-btn" onclick="toggleNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-items">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-folder"></i> Projects</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="project-list">
+                <!-- Project item template -->
+                <template id="project-template">
+                    <div class="project-item">
+                        <img src="" alt="">
+                        <div class="project-content">
+                            <h3></h3>
+                            <p></p>
+                            <div class="tags"></div>
+                            <div class="icon-list"></div>
+                            <div class="link-list"></div>
+                            <div class="button-group">
+                                <!-- Download and Notes buttons will be added here dynamically -->
+                            </div>
+                        </div>
+                        <a class="view-project-btn">View Project</a>
+                    </div>
+                </template>
+                <!-- Project Items will be added here by the javascript -->
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script type="module" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+
+    <!-- <div class="notes-panel">
+        <div class="close-notes" onclick="toggleNotes()">×</div>
+        <h2>Project Notes</h2>
+        <div class="notes-content"></div>
+    </div> -->
+
+    <div class="notes-panel">
+      <div class="close-notes" onclick="toggleNotes()">×</div>
+      <h2>Project Notes</h2>
+      <div class="notes-content"></div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+

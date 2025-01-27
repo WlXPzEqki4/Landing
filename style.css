@@ -1,0 +1,521 @@
+
+ body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #333;
+    color: white;
+    width: 250px; 
+    transition: width 0.3s ease;
+    padding-top: 20px;
+    overflow-x: hidden;
+    flex-shrink: 0; 
+}
+
+.sidebar.collapsed{
+    width: 60px;
+}
+
+.toggle-btn {
+    padding: 15px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.toggle-btn i {
+    font-size: 1.5em;
+}
+
+
+.nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-items li {
+    margin-bottom: 10px;
+}
+
+.nav-items li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+.nav-items li a i{
+    margin-right: 10px;
+}
+
+.nav-items li a:hover {
+    background-color: #444;
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* .project-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    flex-direction: row;
+    max-width: 1200px; 
+    height: 300px;
+} */
+
+
+
+.project-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    flex-direction: row;
+    max-width: 1200px; 
+    height: 380px;  /* Increased from 300px to 380px */
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+
+.project-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    background-color: #f8f8f8;
+    flex-shrink: 0;
+}
+
+
+
+/* .project-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 500px; 
+    max-width: none; 
+} */
+
+
+.project-content {
+    padding: 20px;
+    padding-bottom: 30px;  /* Added extra padding at bottom */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 500px; 
+    max-width: none; 
+}
+
+.project-content h3 {
+    margin-top: 0;
+    font-size: 1.75rem;  
+    font-weight: 600;   
+    margin-bottom: 1rem; 
+    color: #333;       
+    line-height: 1.2;  
+}
+
+
+
+
+.project-content p {
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+
+.project-content .tags {
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.project-content .tags span {
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.icon-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.icon-list .icon-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2rem; 
+}
+
+.icon-list .icon-item i {
+    margin-right: 5px;
+    font-size: 1.8rem; 
+    transition: color 0.2s ease;
+}
+
+.icon-list .icon-item i {
+    color: #555;
+}
+
+.icon-list .icon-item i.fa-html5 {
+    color: #e34c26; /* HTML5 color */
+}
+
+.icon-list .icon-item i.fa-css3-alt {
+    color: #264de4; /* CSS3 color */
+}
+
+.icon-list .icon-item i.fa-js-square {
+    color: #f0db4f; /* JavaScript color */
+}
+
+.icon-list .icon-item i.fa-python {
+   color: #3776ab; /* Python color */
+}
+
+.icon-list .icon-item i.fa-react {
+    color: #61dafb; /* React color */
+}
+
+.icon-list .icon-item i.fa-node-js {
+    color: #68a063; /* Node.js color */
+}
+
+.icon-list .icon-item i.fa-database {
+     color: #ccc; /* Database color */
+}
+.icon-list .icon-item i.fa-vuejs {
+     color: #42b883; /* Vue.js color */
+}
+.icon-list .icon-item i.fa-microsoft {
+     color: #0078d4; /* Typescript color */
+}
+.icon-list .icon-item i.fa-brain {
+   color: #e88715; /* ML color */
+}
+.icon-list .icon-item i.fa-code-branch {
+   color: #82c341; /* Api color */
+}
+
+/* .link-list {
+    margin-top: 10px;
+    font-size: 1rem;
+} */
+
+.link-list {
+    margin-top: 15px;  /* Increased from 10px */
+    margin-bottom: 20px;  /* Added margin bottom */
+    font-size: 1rem;
+}
+
+
+.link-list a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
+
+
+
+.link-list a:hover {
+    text-decoration: underline;
+}
+
+.project-item .view-project-btn {
+    width: 120px;
+    text-decoration: none;
+    display: flex;          
+    justify-content: center; 
+    align-items: center;    
+    color: #333;
+    background-color: #d0d0d0;  
+    padding: 15px;
+    border-left: 1px solid #eee;
+    flex-shrink: 0;
+    font-weight: 600;          
+    font-size: 1.1rem;        
+    height: 100%;              
+    transition: background-color 0.2s ease; 
+}
+
+.project-item .view-project-btn:hover {
+    background-color: #b0b0b0;  
+}
+
+
+/* .notes-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    color: #333;  
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    height: 36px;
+    min-width: 100px;
+}
+
+.notes-button:hover {
+    background-color: #e0e0e0;
+} */
+
+
+
+.notes-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background-color: #007bff;  
+    color: white;              
+    border: none;              
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    height: 36px;
+    min-width: 100px;
+}
+
+.notes-button:hover {
+    background-color: #0056b3;  
+}
+
+
+
+
+
+
+
+
+
+
+ .notes-panel {
+    position: fixed;
+    top: 0;
+    right: -950px;
+    width: 850px;  
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.notes-panel.active {
+    right: 20px; 
+}
+
+.notes-panel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.notes-panel h3 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+    color: #444;
+}
+
+.notes-panel p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.notes-panel .close-notes {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+
+
+
+
+.download-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.download-buttons button {
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.download-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+/* .button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    align-items: center;
+} */
+
+.button-group {
+    margin-top: auto;  /* This will push the buttons to the bottom */
+    padding-top: 15px;  /* Added padding above buttons */
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+
+
+.download-csv-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    height: 36px;
+    min-width: 140px;
+}
+
+.download-csv-button:hover {
+    background-color: #45a049;
+}
+
+.download-csv-button i {
+    margin-right: 8px;
+}
+
+
+
+
+
+.notes-panel .export-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.notes-panel .export-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.notes-panel .export-options {
+    display: flex;
+    gap: 12px;
+}
+
+.notes-panel .export-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    color: #495057;
+}
+
+.notes-panel .export-button:hover {
+    background-color: #e9ecef;
+}
+
+.notes-panel .export-button i.fa-file-word {
+    color: #2b579a;
+}
+
+.notes-panel .export-button i.fa-file-pdf {
+    color: #ff0000;
+}
+
+.notes-panel .export-button i.fa-file-lines {
+    color: #333;
+}
+
+.notes-panel .export-button i.fa-file-code {
+    color: #6c757d;
+}
+
+
+
+
+.screenshot-container {
+    margin: 20px 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;  
+}
+
+.notes-screenshot {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
