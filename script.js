@@ -360,6 +360,7 @@
 
 
 
+let currentlyOpenProject = null;
 
 
 
@@ -462,9 +463,147 @@ window.downloadCSV = async function(filename) {
 };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// window.toggleNotes = async function(projectName) {
+//     console.log("toggleNotes called with:", projectName);
+//     let panel = document.querySelector('.notes-panel');
+    
+//     if (!panel) {
+//         console.error("Notes panel not found!");
+//         return;
+//     }
+    
+//     if (!projectName) {
+//         panel.classList.remove('active');
+//         return;
+//     }
+ 
+//     try {
+//         if (!window.projects) {
+//             console.error("Projects array not found!");
+//             return;
+//         }
+ 
+//         const projectNotes = await loadProjectNotes();
+//         const projectNote = projectNotes[projectName];
+//         const project = window.projects.find(p => p.name === projectName);
+        
+//         if (!project) {
+//             console.error("Project not found:", projectName);
+//             return;
+//         }
+        
+//         if (projectNote) {
+//             let sectionsHTML = '';
+//             let markdownContent = `# ${projectName}\n\n`;
+            
+//             // First add all the sections content
+//             Object.entries(projectNote.sections).forEach(([sectionName, points]) => {
+//                 const sectionId = `notes-${sectionName.toLowerCase().replace(/\s+/g, '-')}`;
+//                 sectionsHTML += `
+//                     <h3>${sectionName}</h3>
+//                     <div id="${sectionId}">${formatContentToHTML(points)}</div>
+//                 `;
+                
+//                 markdownContent += `## ${sectionName}\n${formatContentToMarkdown(points)}\n\n`;
+//             });
+            
+//             // Add the export section with divider
+//             sectionsHTML += `
+//                 <div class="export-section">
+//                     <h3><i class="fas fa-download"></i> Export Options</h3>
+//                     <div class="export-options">
+//                         <button class="export-button" onclick="downloadContent('${encodeURIComponent(markdownContent)}', '${projectName.toLowerCase().replace(/\s+/g, '-')}.md')">
+//                             <i class="fas fa-file-code"></i> MD
+//                         </button>
+//                         <button class="export-button" onclick="downloadContent('${encodeURIComponent(markdownContent)}', '${projectName.toLowerCase().replace(/\s+/g, '-')}.txt')">
+//                             <i class="fas fa-file-lines"></i> TXT
+//                         </button>
+//                         <button class="export-button" onclick="downloadPDF('${encodeURIComponent(markdownContent)}', '${projectName.toLowerCase().replace(/\s+/g, '-')}.pdf')">
+//                             <i class="fas fa-file-pdf"></i> PDF
+//                         </button>
+//                         <button class="export-button" onclick="downloadDOCX('${encodeURIComponent(markdownContent)}', '${projectName.toLowerCase().replace(/\s+/g, '-')}.docx')">
+//                             <i class="fas fa-file-word"></i> DOCX
+//                         </button>
+//                     </div>
+//                 </div>
+//             `;
+ 
+//             // Add Technical Documentation section if the project has a technical doc
+//             if (project && project.technicalDoc) {
+//                 sectionsHTML += `
+//                     <div class="export-section">
+//                         <h3><i class="fas fa-book"></i> Technical Documentation</h3>
+//                         <div class="export-options">
+//                             <button class="export-button" onclick="downloadTechnicalDoc('${project.technicalDoc}')">
+//                                 <i class="fas fa-file-word"></i> Documentation
+//                             </button>
+//                         </div>
+//                     </div>
+//                 `;
+//             }
+
+//             // Inside your toggleNotes function
+//             if (project && project.screenshots && project.screenshots.length > 0) {
+//                 sectionsHTML += `
+//                     <div class="export-section">
+//                         <h3><i class="fas fa-camera"></i> Screenshots</h3>
+//                         <div class="screenshot-container">
+//                             ${project.screenshots.map(screenshot => `
+//                                 <img src="${screenshot}" alt="Project Screenshot" class="notes-screenshot">
+//                             `).join('')}
+//                         </div>
+//                     </div>
+//                 `;
+//             }
+            
+//             panel.querySelector('.notes-content').innerHTML = sectionsHTML;
+//             panel.querySelector('h2').textContent = `${projectName} - Notes`;
+//             panel.classList.add('active');
+//         }
+//     } catch (error) {
+//         console.error('Error loading notes:', error);
+//     }
+//  }
+
+
+
+
+
 window.toggleNotes = async function(projectName) {
     console.log("toggleNotes called with:", projectName);
     let panel = document.querySelector('.notes-panel');
+    
+    // New code: Check if clicking the same project's notes button
+    if (currentlyOpenProject === projectName) {
+        panel.classList.remove('active');
+        currentlyOpenProject = null;
+        return;
+    }
+    
+    // New code: Update currently open project
+    currentlyOpenProject = projectName;
     
     if (!panel) {
         console.error("Notes panel not found!");
@@ -473,6 +612,7 @@ window.toggleNotes = async function(projectName) {
     
     if (!projectName) {
         panel.classList.remove('active');
+        currentlyOpenProject = null;  // New code: Reset tracking variable
         return;
     }
  
@@ -541,24 +681,6 @@ window.toggleNotes = async function(projectName) {
                 `;
             }
 
-
-
-
-            // Inside your toggleNotes function, after the technical documentation section:
-            // if (project && project.screenshotImage) {
-            //     sectionsHTML += `
-            //         <div class="export-section">
-            //             <h3><i class="fas fa-camera"></i> Screenshots</h3>
-            //             <div class="screenshot-container">
-            //                 <img src="${project.screenshotImage}" alt="Project Screenshot" class="notes-screenshot">
-            //             </div>
-            //         </div>
-            //     `;
-            // }
-
-
-
-            // Inside your toggleNotes function
             if (project && project.screenshots && project.screenshots.length > 0) {
                 sectionsHTML += `
                     <div class="export-section">
@@ -571,13 +693,6 @@ window.toggleNotes = async function(projectName) {
                     </div>
                 `;
             }
-
-
-
-
-
-
-
             
             panel.querySelector('.notes-content').innerHTML = sectionsHTML;
             panel.querySelector('h2').textContent = `${projectName} - Notes`;
@@ -586,7 +701,49 @@ window.toggleNotes = async function(projectName) {
     } catch (error) {
         console.error('Error loading notes:', error);
     }
- }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Add this new function for downloading technical documentation
@@ -676,6 +833,65 @@ window.downloadDOCX = function(content, filename) {
         console.error('DOCX error:', error);
     }
 }
+
+document.addEventListener('mousemove', function(e) {
+    const tooltip = document.querySelector('.maid-tooltip:hover:after');
+    if (tooltip) {
+        tooltip.style.left = e.pageX + 'px';
+        tooltip.style.top = (e.pageY - 20) + 'px'; // 20px above cursor
+    }
+});
+
+
+
+
+
+function toggleSubmenu(element) {
+    const navItem = element.parentElement;
+    navItem.classList.toggle('expanded');
+}
+
+// Optional: Close other submenus when opening a new one
+// document.querySelectorAll('.nav-item > a').forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         if (e.currentTarget.nextElementSibling?.classList.contains('submenu')) {
+//             document.querySelectorAll('.nav-item').forEach(navItem => {
+//                 if (navItem !== e.currentTarget.parentElement) {
+//                     navItem.classList.remove('expanded');
+//                 }
+//             });
+//         }
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    
+    sidebar.addEventListener('mouseleave', function() {
+        // Get all expanded items
+        const expandedItems = document.querySelectorAll('.nav-item.expanded');
+        
+        // Add a small delay to match the sidebar collapse animation
+        setTimeout(() => {
+            expandedItems.forEach(item => {
+                item.classList.remove('expanded');
+            });
+        }, 100); // Small delay to make it feel smooth
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -864,7 +1080,10 @@ window.downloadDOCX = function(content, filename) {
                 <button class="notes-button" onclick="toggleNotes('${project.name}')">Notes</button>
             </div>
         </div>
-        <a href="${project.link}" target="_blank" class="view-project-btn">View Project</a>
+        <a href="${project.link}" 
+        target="_blank" 
+        class="view-project-btn ${project.name === "Streamlit MAID app" ? 'maid-tooltip' : ''}"
+        >View Project</a>
     `;
 
         projectList.appendChild(projectItem);
@@ -897,10 +1116,10 @@ window.downloadDOCX = function(content, filename) {
     ` : "";
  }
  
- function toggleNav() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('collapsed');
- }
+//  function toggleNav() {
+//     const sidebar = document.querySelector('.sidebar');
+//     sidebar.classList.toggle('collapsed');
+//  }
 
 
 

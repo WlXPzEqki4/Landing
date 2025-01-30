@@ -9,17 +9,118 @@
 </head>
 <body>
     <div class="container">
-        <nav class="sidebar">
-            <div class="toggle-btn" onclick="toggleNav()">
-                <i class="fas fa-bars"></i>
-            </div>
+        
+
+        <!-- <nav class="sidebar">
             <ul class="nav-items">
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-folder"></i> Projects</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" onclick="toggleSubmenu(this); return false;">
+                        <i class="fas fa-folder"></i>
+                        <span>Projects</span>
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </a>
+                    <div class="submenu">
+                        <a href="#"><span>All</span></a>
+                        <a href="#"><span>Strategic</span></a>
+                        <a href="#"><span>Tactical</span></a>
+                    </div>
+                </li>
+        
+                <li class="nav-item">
+                    <a href="#" onclick="toggleSubmenu(this); return false;">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </a>
+                    <div class="submenu">
+                        <a href="#"><span>Profile</span></a>
+                        <a href="#"><span>Preferences</span></a>
+                    </div>
+                </li>
+        
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </li>
             </ul>
         </nav>
+ -->
+
+
+
+ <nav class="sidebar">
+    <ul class="nav-items">
+        <li class="nav-item">
+            <a href="#">
+                <i class="far fa-square-check"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="#" onclick="toggleSubmenu(this); return false;">
+                <i class="far fa-folder"></i>
+                <span>Projects</span>
+                <i class="fas fa-chevron-down chevron"></i>
+            </a>
+            <div class="submenu">
+                <a href="#"><span>All</span></a>
+                <a href="#"><span>Strategic</span></a>
+                <a href="#"><span>Tactical</span></a>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" onclick="toggleSubmenu(this); return false;">
+                <i class="far fa-circle-user"></i>
+                <span>Settings</span>
+                <i class="fas fa-chevron-down chevron"></i>
+            </a>
+            <div class="submenu">
+                <a href="#"><span>Profile</span></a>
+                <a href="#"><span>Preferences</span></a>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a href="#">
+                <i class="far fa-circle-info"></i>
+                <span>About</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <main>
             <div class="project-list">
@@ -46,15 +147,11 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    <script type="module" src="script.js"></script>
+    <!-- <script type="module" src="script.js"></script> -->
+    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
 
-    <!-- <div class="notes-panel">
-        <div class="close-notes" onclick="toggleNotes()">×</div>
-        <h2>Project Notes</h2>
-        <div class="notes-content"></div>
-    </div> -->
 
     <div class="notes-panel">
       <div class="close-notes" onclick="toggleNotes()">×</div>
