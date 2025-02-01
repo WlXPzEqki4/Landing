@@ -9,79 +9,50 @@
 </head>
 <body>
     <div class="container">
-        
-
-        <!-- <nav class="sidebar">
-            <ul class="nav-items">
-                <li class="nav-item">
-                    <a href="#">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="#" onclick="toggleSubmenu(this); return false;">
-                        <i class="fas fa-folder"></i>
-                        <span>Projects</span>
-                        <i class="fas fa-chevron-down chevron"></i>
-                    </a>
-                    <div class="submenu">
-                        <a href="#"><span>All</span></a>
-                        <a href="#"><span>Strategic</span></a>
-                        <a href="#"><span>Tactical</span></a>
-                    </div>
-                </li>
-        
-                <li class="nav-item">
-                    <a href="#" onclick="toggleSubmenu(this); return false;">
-                        <i class="fas fa-cog"></i>
-                        <span>Settings</span>
-                        <i class="fas fa-chevron-down chevron"></i>
-                    </a>
-                    <div class="submenu">
-                        <a href="#"><span>Profile</span></a>
-                        <a href="#"><span>Preferences</span></a>
-                    </div>
-                </li>
-        
-                <li class="nav-item">
-                    <a href="#">
-                        <i class="fas fa-info-circle"></i>
-                        <span>About</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
- -->
-
-
-
- <nav class="sidebar">
-    <ul class="nav-items">
+   <nav class="sidebar">
+      <ul class="nav-items">
         <li class="nav-item">
-            <a href="#">
-                <i class="far fa-square-check"></i>
+            <a href="#" onclick="showPage('homePage'); return false;">
+                <i class="fas fa-home"></i>
                 <span>Home</span>
             </a>
         </li>
-        
+
+
+
+
         <li class="nav-item">
             <a href="#" onclick="toggleSubmenu(this); return false;">
-                <i class="far fa-folder"></i>
+                <i class="fas fa-folder-open"></i>
                 <span>Projects</span>
                 <i class="fas fa-chevron-down chevron"></i>
             </a>
             <div class="submenu">
-                <a href="#"><span>All</span></a>
-                <a href="#"><span>Strategic</span></a>
-                <a href="#"><span>Tactical</span></a>
+                <a href="#" onclick="showPage('projectsAllPage'); return false;">
+                  <span>All</span>
+                  <span class="badge" id="badge-all">0</span>
+                </a>
+                <a href="#" onclick="showPage('projectsStrategicPage'); return false;">
+                  <span>Strategic</span>
+                  <span class="badge" id="badge-strategic">0</span>
+                </a>
+                <a href="#" onclick="showPage('projectsTacticalPage'); return false;">
+                  <span>Tactical</span>
+                  <span class="badge" id="badge-tactical">0</span>
+                </a>
             </div>
-        </li>
+          </li>
+          
+
+
+
+
+
+
 
         <li class="nav-item">
-            <a href="#" onclick="toggleSubmenu(this); return false;">
-                <i class="far fa-circle-user"></i>
+            <a href="#" onclick="toggleSubmenu(this); showPage('settingsPage'); return false;">
+                <i class="fas fa-cog"></i>
                 <span>Settings</span>
                 <i class="fas fa-chevron-down chevron"></i>
             </a>
@@ -90,77 +61,106 @@
                 <a href="#"><span>Preferences</span></a>
             </div>
         </li>
-
         <li class="nav-item">
-            <a href="#">
-                <i class="far fa-circle-info"></i>
+            <a href="#" onclick="showPage('aboutPage'); return false;">
+                <i class="fas fa-info-circle"></i>
                 <span>About</span>
             </a>
         </li>
-    </ul>
-</nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <main>
-            <div class="project-list">
-                <!-- Project item template -->
-                <template id="project-template">
-                    <div class="project-item">
-                        <img src="" alt="">
-                        <div class="project-content">
-                            <h3></h3>
-                            <p></p>
-                            <div class="tags"></div>
-                            <div class="icon-list"></div>
-                            <div class="link-list"></div>
-                            <div class="button-group">
-                                <!-- Download and Notes buttons will be added here dynamically -->
-                            </div>
-                        </div>
-                        <a class="view-project-btn">View Project</a>
-                    </div>
-                </template>
-                <!-- Project Items will be added here by the javascript -->
+        <li class="nav-item">
+            <a href="#" onclick="toggleSubmenu(this); showPage('themePage'); return false;">
+                <i class="fas fa-palette"></i>
+                <span>Theme</span>
+                <i class="fas fa-chevron-down chevron"></i>
+            </a>
+            <div class="submenu">
+                <a href="#" onclick="applyColorScheme('original'); showPage('themePage'); return false;"><span>Original</span></a>
+                <a href="#" onclick="applyColorScheme('alternative'); showPage('themePage'); return false;"><span>Alternative</span></a>
             </div>
+        </li>
+    </ul>
+ </nav>
+        <main>
+
+
+
+             <div class="page" id="projectsAllPage" style="display:none;">
+                <div class="project-list"></div>
+            </div>
+
+            <div class="page" id="projectsStrategicPage" style="display:none;">
+                <div class="project-list"></div>
+            </div>
+            
+            <div class="page" id="projectsTacticalPage" style="display:none;">
+                <div class="project-list"></div>
+            </div>
+
+
+
         </main>
+
+
+
+
+
+
+        
+        <div class="page centered-page" id="homePage" style="display: none;">
+            <h2 style="font-size: 2rem;">Home Page</h2>
+            <p style="font-size: 1.2rem;">This is placeholder content for the Home Page.</p>
+        </br>
+        </br>
+        </br>  
+        <!-- We'll display version info here -->
+        <div class="version-info">
+            Version <span id="appVersion"></span> 
+            &nbsp;|&nbsp; 
+            Release Date: <span id="releaseDate"></span>
+        </div>
+
+      </div>
+
+
+        <div class="page centered-page" id="settingsPage" style="display: none;">
+            <h2>Settings Page</h2>
+            <p>This is placeholder content for the Settings Page.</p>
+        </div>
+        <div class="page centered-page" id="aboutPage" style="display: none;">
+            <h2>About Page</h2>
+            <p>This is placeholder content for the About Page.</p>
+        </div>
+        <div class="page centered-page" id="themePage" style="display: none;">
+            <h2>Theme Page</h2>
+            <p>This is placeholder content for the Theme Page.</p>
+        </div>
+
+
+
+
     </div>
 
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    <!-- <script type="module" src="script.js"></script> -->
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
-
-
     <div class="notes-panel">
-      <div class="close-notes" onclick="toggleNotes()">×</div>
-      <h2>Project Notes</h2>
-      <div class="notes-content"></div>
-  </div>
-
+        <div class="close-notes" onclick="toggleNotes()">×</div>
+        <h2>Project Notes</h2>
+        <div class="notes-content"></div>
+    </div>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

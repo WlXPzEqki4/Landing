@@ -49,3 +49,22 @@ MALL 2 - ScrollyTelling,Key Features,AI-driven analysis tools and interactive ca
 MALL 2 - ScrollyTelling,Key Features,Real-time collaboration across jurisdictions,2,4
 MALL 2 - ScrollyTelling,Technical Stack,"Modular architecture supporting dynamic data exploration and multi-source intelligence integration. Features secure data handling, case management tools, and cross-platform collaboration capabilities, with emphasis on real-time visualisation and analysis.",3,0
 MALL 2 - ScrollyTelling,Implementation,"Designed for intelligence analysts tracking SOIs across multiple jurisdictions. Primary applications include narcotics trafficking network analysis, suspicious activity monitoring, and operational gap identification.",4,0
+Internal Dashboard,Description,"A secure, internal-facing analytics solution that aggregates departmental data for real-time insights.",1,0
+Internal Dashboard,Key Features,Role-based access control for segmented data visibility,2,0
+Internal Dashboard,Key Features,Live metrics and automated alerts for critical changes,2,1
+Internal Dashboard,Key Features,Customisable dashboards supporting multi-department views,2,2
+Internal Dashboard,Research Methods,User interviews and existing workflow observation to identify core needs.,3,0
+Internal Dashboard,Research Methods,Survey-based feedback for refining feature priorities.,3,1
+Internal Dashboard,Development Status,Alpha version under active testing; Beta release planned in Q3.,4,0
+Internal Dashboard,Development Status,Integration with SSO and additional security layers pending.,4,1
+Internal Dashboard,Roadmap,Phase 1 focuses on user-based analytics; Phase 2 expands to predictive insights.,5,0
+Internal Dashboard,Technical Stack,"Built with React, Node.js, and PostgreSQL, integrating with internal APIs.",6,0
+Internal Dashboard,Implementation,Designed for internal stakeholders needing consolidated visibility and streamlined reporting.,7,0
+Flash Rep,Description,"A real-time intelligence briefing platform that transforms emerging tech developments into structured analytical frameworks, combining executive summaries, stakeholder mapping, and temporal analysis with interactive market impact visualizations.",1,0
+Flash Rep,Key Features,"Timeline analysis with collapsible sections and live updates, stakeholder mapping with interactive nodes, and integrated market performance dashboards.",2,0
+Flash Rep,Key Features,Custom alerts and data extraction enhance rapid decision-making and policy response.,2,1
+Flash Rep,Market Impact,"Provides real-time financial charts, sentiment shifts, and top-level economic indicators relevant to newly emerging technologies.",3,0
+Flash Rep,Analysis Approach,"Combines narrative-based storytelling with layered data integration, allowing quick scanning or in-depth exploration.",4,0
+Flash Rep,Technical Stack,"Built on Node.js, React, and D3.js for advanced data visualization. Integrates multiple web-based APIs for near real-time updates.",5,0
+Flash Rep,Implementation,"Tailored for intelligence and corporate environments, supporting collaborative reviews and cross-department feedback loops.",6,0
+Flash Rep,Timeline & Roadmap,"Upcoming phases include predictive modeling and expanded third-party API integrations, targeting a Q2 rollout.",7,0

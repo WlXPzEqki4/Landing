@@ -1,0 +1,40 @@
+﻿projectId,sectionName,content,order,suborder
+Streamlit MAID app,Key Features,User Authentication System,1,0
+Streamlit MAID app,Key Features,Role-based access control,1,1
+Streamlit MAID app,Key Features,Data Visualization Module,2,0
+Streamlit MAID app,Key Features,Interactive charts,2,1
+Streamlit MAID app,Key Features,Custom filtering,2,2
+Streamlit MAID app,Technical Stack,Frontend Framework,1,0
+Streamlit MAID app,Technical Stack,Streamlit components,1,1
+MALL 2 - ScrollyTelling,Architecture,Component Structure,1,0
+MALL 2 - ScrollyTelling,Architecture,Data Flow Design,2,0
+MALL 2 - ScrollyTelling,Architecture,State Management,2,1
+MALL 2 - ScrollyTelling,Implementation,Core Features,1,0
+MALL 2 - ScrollyTelling,Implementation,Performance Optimizations,1,1
+MALL 2 - ScrollyTelling,Implementation,Error Handling,1,2
+WILDCARDS - Most Dangerous Ideas 2025,Research Methods,Data Collection,1,0
+WILDCARDS - Most Dangerous Ideas 2025,Research Methods,Survey Design,1,1
+WILDCARDS - Most Dangerous Ideas 2025,Research Methods,Analysis Framework,2,0
+WILDCARDS - Most Dangerous Ideas 2025,Findings,Key Insights,1,0
+WILDCARDS - Most Dangerous Ideas 2025,Findings,Statistical Analysis,1,1
+WIP WILDCARDS - Most Dangerous Ideas 2025,Development Status,Current Progress,1,0
+WIP WILDCARDS - Most Dangerous Ideas 2025,Development Status,Completed Modules,1,1
+WIP WILDCARDS - Most Dangerous Ideas 2025,Development Status,Pending Features,2,0
+WIP WILDCARDS - Most Dangerous Ideas 2025,Roadmap,Phase 1 Goals,1,0
+WIP WILDCARDS - Most Dangerous Ideas 2025,Roadmap,Phase 2 Plans,2,0
+Narrative Analysis,Methodology,Framework Selection,1,0
+Narrative Analysis,Methodology,Implementation Steps,2,0
+Narrative Analysis,Results,Key Findings,1,0
+Narrative Analysis,Results,Data Visualization,1,1
+Narrative Analysis,Results,Statistical Summary,1,2
+Daily Route,System Design,Architecture Overview,1,0
+Daily Route,System Design,Component Interaction,1,1
+Daily Route,Performance,Optimization Measures,1,0
+Daily Route,Performance,Benchmarks,2,0
+Pattern of Life,Data Processing,Collection Methods,1,0
+Pattern of Life,Data Processing,Cleaning Pipeline,1,1
+Pattern of Life,Data Processing,Validation Steps,1,2
+Pattern of Life,Analysis,Pattern Recognition,1,0
+Pattern of Life,Analysis,Anomaly Detection,2,0
+Pattern of Life,Visualization,Interactive Maps,1,0
+Pattern of Life,Visualization,Timeline Views,2,0
