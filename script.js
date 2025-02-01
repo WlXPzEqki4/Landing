@@ -759,7 +759,7 @@ function updateBadgeCounts() {
 
 
 // Somewhere near the top or before DOMContentLoaded
-const CURRENT_VERSION = "0.1.1";
+const CURRENT_VERSION = "0.1.2";
 const CURRENT_RELEASE_DATE = "1 Feb 2025";
 
 
