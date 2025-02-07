@@ -68,3 +68,11 @@ Flash Rep,Analysis Approach,"Combines narrative-based storytelling with layered 
 Flash Rep,Technical Stack,"Built on Node.js, React, and D3.js for advanced data visualization. Integrates multiple web-based APIs for near real-time updates.",5,0
 Flash Rep,Implementation,"Tailored for intelligence and corporate environments, supporting collaborative reviews and cross-department feedback loops.",6,0
 Flash Rep,Timeline & Roadmap,"Upcoming phases include predictive modeling and expanded third-party API integrations, targeting a Q2 rollout.",7,0
+MALL 2,Description,"An interactive intelligence reporting platform that transforms static OSINT data into dynamic visualisations, integrating geospatial analysis, network mapping, and multimedia elements to track Subjects of Interest (SOIs) and their activities.",1,0
+MALL 2,Key Features,Interactive mapping with customisable overlays and Street View integration,2,0
+MALL 2,Key Features,Network visualisation of SOI relationships and behavioural patterns,2,1
+MALL 2,Key Features,"Multimedia integration (surveillance imagery, audio, video)",2,2
+MALL 2,Key Features,AI-driven analysis tools and interactive case summaries,2,3
+MALL 2,Key Features,Real-time collaboration across jurisdictions,2,4
+MALL 2,Technical Stack,"Modular architecture supporting dynamic data exploration and multi-source intelligence integration. Features secure data handling, case management tools, and cross-platform collaboration capabilities, with emphasis on real-time visualisation and analysis.",3,0
+MALL 2,Implementation,"Designed for intelligence analysts tracking SOIs across multiple jurisdictions. Primary applications include narcotics trafficking network analysis, suspicious activity monitoring, and operational gap identification.",4,0

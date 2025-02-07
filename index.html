@@ -1,269 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Showcase</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase</title>
+
+  <!-- Existing styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- If using Three.js for 3D animations -->
+  <script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
+
+  <!-- animations.js must come after three if referencing THREE -->
+  <script src="animations.js"></script>
 </head>
 <body>
-    <div class="container">
-   <nav class="sidebar">
+  <div class="container">
+    <nav class="sidebar">
       <ul class="nav-items">
         <li class="nav-item">
-            <a href="#" onclick="showPage('homePage'); return false;">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </a>
+          <a href="#" onclick="showPage('homePage'); return false;">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
         </li>
 
         <li class="nav-item">
-            <a href="#" onclick="toggleSubmenu(this); return false;">
-                <i class="fas fa-folder-open"></i>
-                <span>Projects</span>
-                <i class="fas fa-chevron-down chevron"></i>
+          <a href="#" onclick="toggleSubmenu(this); return false;">
+            <i class="fas fa-folder-open"></i>
+            <span>Projects</span>
+            <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="submenu">
+            <a href="#" onclick="showPage('projectsAllPage'); return false;">
+              <span>All</span>
+              <span class="badge" id="badge-all">0</span>
             </a>
-            <div class="submenu">
-                <a href="#" onclick="showPage('projectsAllPage'); return false;">
-                  <span>All</span>
-                  <span class="badge" id="badge-all">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsStrategicPage'); return false;">
-                  <span>Strategic</span>
-                  <span class="badge" id="badge-strategic">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsTacticalPage'); return false;">
-                  <span>Tactical</span>
-                  <span class="badge" id="badge-tactical">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsNewPage'); return false;">
-                    <span>New</span>
-                    <span class="badge" id="badge-new">0</span>
-                </a>
-
-
-
-
-
-                <a href="#" onclick="showPage('projectsMallPage'); return false;">
-                    <span>MALL</span>
-                    <span class="badge" id="badge-mall">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsToolsPage'); return false;">
-                    <span>Tools</span>
-                    <span class="badge" id="badge-tools">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsStreamlitPage'); return false;">
-                    <span>Streamlit</span>
-                    <span class="badge" id="badge-streamlit">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsCtdPage'); return false;">
-                    <span>CTD</span>
-                    <span class="badge" id="badge-ctd">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsNarrativePage'); return false;">
-                    <span>Narrative</span>
-                    <span class="badge" id="badge-narrative">0</span>
-                </a>
-                <a href="#" onclick="showPage('projectsPrototypesPage'); return false;">
-                    <span>Prototypes</span>
-                    <span class="badge" id="badge-prototypes">0</span>
-                </a>
-
-
-
-
-
-
-
-
-
-            </div>
-          </li>
-          
-
-        <li class="nav-item">
-            <a href="#" onclick="toggleSubmenu(this); showPage('settingsPage'); return false;">
-                <i class="fas fa-cog"></i>
-                <span>Settings</span>
-                <i class="fas fa-chevron-down chevron"></i>
+            <a href="#" onclick="showPage('projectsStrategicPage'); return false;">
+              <span>Strategic</span>
+              <span class="badge" id="badge-strategic">0</span>
             </a>
-            <div class="submenu">
-                <a href="#"><span>Profile</span></a>
-                <a href="#"><span>Preferences</span></a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a href="#" onclick="showPage('aboutPage'); return false;">
-                <i class="fas fa-info-circle"></i>
-                <span>About</span>
+            <a href="#" onclick="showPage('projectsTacticalPage'); return false;">
+              <span>Tactical</span>
+              <span class="badge" id="badge-tactical">0</span>
             </a>
+            <a href="#" onclick="showPage('projectsNewPage'); return false;">
+              <span>New</span>
+              <span class="badge" id="badge-new">0</span>
+            </a>
+            <a href="#" onclick="showPage('projectsMallPage'); return false;">
+              <span>MALL</span>
+              <span class="badge" id="badge-mall">0</span>
+            </a>
+            <a href="#" onclick="showPage('projectsToolsPage'); return false;">
+              <span>Tools</span>
+              <span class="badge" id="badge-tools">0</span>
+            </a>
+            <a href="#" onclick="showPage('projectsStreamlitPage'); return false;">
+              <span>Streamlit</span>
+              <span class="badge" id="badge-streamlit">0</span>
+            </a>
+            <a href="#" onclick="showPage('projectsCtdPage'); return false;">
+              <span>CTD</span>
+              <span class="badge" id="badge-ctd">0</span>
+            </a>
+            <a href="#" onclick="showPage('projectsNarrativePage'); return false;">
+              <span>Narrative</span>
+              <span class="badge" id="badge-narrative">0</span>
+            </a>
+            <a href="#" onclick="showPage('projectsPrototypesPage'); return false;">
+              <span>Prototypes</span>
+              <span class="badge" id="badge-prototypes">0</span>
+            </a>
+          </div>
         </li>
 
         <li class="nav-item">
-            <!-- REMOVE showPage('themePage') from the onclick here: -->
-            <a href="#" onclick="toggleSubmenu(this); return false;">
-                <i class="fas fa-palette"></i>
-                <span>Theme</span>
-                <i class="fas fa-chevron-down chevron"></i>
-            </a>
-            <div class="submenu">
-                <!-- <a href="#" onclick="applyColorScheme('original'); showPage('themePage'); return false;">Original</a>
-                <a href="#" onclick="applyColorScheme('alternative'); showPage('themePage'); return false;">Alternative</a> -->
-                <a href="#" onclick="applyColorScheme('day'); return false;">Day</a>
-                <a href="#" onclick="applyColorScheme('night'); return false;">Night</a>
-                <a href="#" onclick="applyColorScheme('coffee'); return false;">Coffee</a>
-                
-            </div>
-          </li>
-          
-    </ul>
- </nav>
-        <main>
+          <a href="#" onclick="toggleSubmenu(this); showPage('settingsPage'); return false;">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+            <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="submenu">
+            <a href="#"><span>Profile</span></a>
+            <a href="#"><span>Preferences</span></a>
+          </div>
+        </li>
 
+        <li class="nav-item">
+          <a href="#" onclick="showPage('aboutPage'); return false;">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+          </a>
+        </li>
 
+        <li class="nav-item">
+          <a href="#" onclick="toggleSubmenu(this); return false;">
+            <i class="fas fa-palette"></i>
+            <span>Theme</span>
+            <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="submenu">
+            <a href="#" onclick="applyColorScheme('day'); return false;">Day</a>
+            <a href="#" onclick="applyColorScheme('night'); return false;">Night</a>
+            <a href="#" onclick="applyColorScheme('coffee'); return false;">Coffee</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
 
-            <div class="page" id="projectsAllPage" style="display: none;">
-                <h2>All Projects</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-            
+    <main>
+      <!-- Projects pages -->
+      <div class="page" id="projectsAllPage" style="display: none;">
+        <h2>All Projects</h2>
+        <div class="project-list"></div>
+      </div>
 
-            <div class="page" id="projectsStrategicPage" style="display: none;">
-                <h2>Strategic Projects</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-            
-            
-            <div class="page" id="projectsTacticalPage" style="display: none;">
-                <h2>Tactical Projects</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-            
+      <div class="page" id="projectsStrategicPage" style="display: none;">
+        <h2>Strategic Projects</h2>
+        <div class="project-list"></div>
+      </div>
 
-            <div class="page" id="projectsNewPage" style="display: none;">
-                <h2>New Projects</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
+      <div class="page" id="projectsTacticalPage" style="display: none;">
+        <h2>Tactical Projects</h2>
+        <div class="project-list"></div>
+      </div>
 
+      <div class="page" id="projectsNewPage" style="display: none;">
+        <h2>New Projects</h2>
+        <div class="project-list"></div>
+      </div>
 
+      <div class="page" id="projectsMallPage" style="display: none;">
+        <h2>MALL</h2>
+        <div class="project-list"></div>
+      </div>
 
+      <div class="page" id="projectsToolsPage" style="display: none;">
+        <h2>Tools</h2>
+        <div class="project-list"></div>
+      </div>
 
+      <div class="page" id="projectsStreamlitPage" style="display: none;">
+        <h2>Streamlit</h2>
+        <div class="project-list"></div>
+      </div>
 
+      <div class="page" id="projectsCtdPage" style="display: none;">
+        <h2>CTD</h2>
+        <div class="project-list"></div>
+      </div>
 
-            <div class="page" id="projectsMallPage" style="display: none;">
-                <h2>MALL</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-            
+      <div class="page" id="projectsNarrativePage" style="display: none;">
+        <h2>Narrative</h2>
+        <div class="project-list"></div>
+      </div>
 
-            <div class="page" id="projectsToolsPage" style="display: none;">
-                <h2>Tools</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-            
-            
-            <div class="page" id="projectsStreamlitPage" style="display: none;">
-                <h2>Streamlit</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-            
+      <div class="page" id="projectsPrototypesPage" style="display: none;">
+        <h2>Prototypes</h2>
+        <div class="project-list"></div>
+      </div>
+    </main>
 
-            <div class="page" id="projectsCtdPage" style="display: none;">
-                <h2>CTD</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
+    <!-- HOME PAGE -->
+    <div 
+      class="page home-page" 
+      id="homePage" 
+      style="
+        /* Hide it by default; script can set display='flex' when shown */
+        display: none; 
+        position: relative; 
+        width: 100%; 
+        height: 100vh; 
+        align-items: center; 
+        justify-content: center;
+      "
+    >
+      <!-- Full-screen animation container behind everything -->
+      <div 
+        id="interactiveContainer"
+        style="
+          position: fixed;
+          top: 0; 
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          pointer-events: none;
+        "
+      ></div>
 
-
-            <div class="page" id="projectsNarrativePage" style="display: none;">
-                <h2>Narrative</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-            
-
-            <div class="page" id="projectsPrototypesPage" style="display: none;">
-                <h2>Prototypes</h2>
-                <div class="project-list">
-                    <!-- Projects get injected here by JavaScript -->
-                </div>
-            </div>
-
-        </main>
-
-
-        <div class="page centered-page" id="homePage" style="display: none;">
-            <h2 style="font-size: 2rem;">Home Page</h2>
-            <p style="font-size: 1.2rem;">This is placeholder content for the Home Page.</p>
-        </br>
-        </br>
-        </br>  
-        <!-- We'll display version info here -->
-        <div class="version-info">
-            Version <span id="appVersion"></span> 
-            &nbsp;|&nbsp; 
-            Release Date: <span id="releaseDate"></span>
+      <!-- Centred home page content -->
+      <div style="text-align: center; margin: 0 auto;">
+        <h2 style="font-size: 2rem;">Home Page</h2>
+        <p style="font-size: 1.2rem;">This is placeholder content for the Home Page.</p>
+        <div class="version-info" style="margin-top: 2rem;">
+          Version <span id="appVersion"></span> &nbsp;|&nbsp;
+          Release Date: <span id="releaseDate"></span>
         </div>
-        </div>
-
-
-        <div class="page centered-page" id="settingsPage" style="display: none;">
-            <h2>Settings Page</h2>
-            <p>This is placeholder content for the Settings Page.</p>
-        </div>
-        <div class="page centered-page" id="aboutPage" style="display: none;">
-            <h2>About Page</h2>
-            <p>This is placeholder content for the About Page.</p>
-        </div>
-        <div class="page centered-page" id="themePage" style="display: none;">
-            <h2>Theme Page</h2>
-            <p>This is placeholder content for the Theme Page.</p>
-        </div>
-
-
-
-
+      </div>
     </div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
-    <div class="notes-panel">
-        <div class="close-notes" onclick="toggleNotes()">×</div>
-        <h2>Project Notes</h2>
-        <div class="notes-content"></div>
+    <!-- Additional pages -->
+    <div class="page centered-page" id="settingsPage" style="display: none;">
+      <h2>Settings Page</h2>
+      <p>This is placeholder content for the Settings Page.</p>
     </div>
+
+    <div class="page centered-page" id="aboutPage" style="display: none;">
+      <h2>About Page</h2>
+      <p>This is placeholder content for the About Page.</p>
+    </div>
+
+    <div class="page centered-page" id="themePage" style="display: none;">
+      <h2>Theme Page</h2>
+      <p>This is placeholder content for the Theme Page.</p>
+    </div>
+  </div> <!-- .container ends -->
+
+  <!-- PapaParse for CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+
+  <!-- JSPDF and docx libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+
+  <!-- Notes panel -->
+  <div class="notes-panel">
+    <div class="close-notes" onclick="toggleNotes()">×</div>
+    <h2>Project Notes</h2>
+    <div class="notes-content"></div>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
