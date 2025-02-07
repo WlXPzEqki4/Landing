@@ -653,7 +653,45 @@ window.showPage = function (pageId) {
         projectsToShow = window.projects.filter(
             project => project.category?.includes('tactical')
         );
+    } else if (pageId === 'projectsNewPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('new')
+        );
+    }else if (pageId === 'projectsMallPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('mall')
+        );
+    } else if (pageId === 'projectsToolsPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('tools')
+        );
+    } else if (pageId === 'projectsStreamlitPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('streamlit')
+        );
+    }else if (pageId === 'projectsCtdPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('ctd')
+        );
+    } else if (pageId === 'projectsNarrativePage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('narrative')
+        );
+    } else if (pageId === 'projectsPrototypesPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('prototypes')
+        );
     }
+
+
+
+
+
+
+
+
+
+
 
     // 6. Append project cards
     projectsToShow.forEach(project => {
@@ -734,6 +772,18 @@ function updateBadgeCounts() {
     const badgeAll = document.getElementById('badge-all');
     const badgeStrategic = document.getElementById('badge-strategic');
     const badgeTactical = document.getElementById('badge-tactical');
+    const badgeNew = document.getElementById('badge-new');
+
+
+    const badgeMall = document.getElementById('badge-mall');
+    const badgeTools = document.getElementById('badge-tools');
+    const badgeStreamlit = document.getElementById('badge-streamlit');
+    const badgeCtd = document.getElementById('badge-ctd');
+    const badgeNarrative = document.getElementById('badge-narrative');
+    const badgePrototypes = document.getElementById('badge-prototypes');
+
+
+
   
     // Count total, strategic, and tactical
     const allCount = window.projects.length;
@@ -743,11 +793,50 @@ function updateBadgeCounts() {
     const tacticalCount = window.projects.filter(
       p => p.category?.includes('tactical')
     ).length;
-  
+    const newCount = window.projects.filter(
+        p => p.category?.includes('new')
+      ).length;
+
+
+
+      const mallCount = window.projects.filter(
+         p => p.category?.includes('mall')
+      ).length;
+      const toolsCount = window.projects.filter(
+         p => p.category?.includes('tools')
+      ).length;
+      const streamlitCount = window.projects.filter(
+          p => p.category?.includes('streamlit')
+        ).length;
+      const ctdCount = window.projects.filter(
+         p => p.category?.includes('ctd')
+      ).length;
+      const narrativeCount = window.projects.filter(
+         p => p.category?.includes('narrative')
+      ).length;
+      const prototypesCount = window.projects.filter(
+         p => p.category?.includes('prototypes')
+      ).length;
+
+
+
     // Update the badge text
     badgeAll.textContent = allCount;
     badgeStrategic.textContent = strategicCount;
     badgeTactical.textContent = tacticalCount;
+    badgeNew.textContent = newCount;
+
+
+
+    badgeMall.textContent = mallCount;
+    badgeTools.textContent = toolsCount;
+    badgeStreamlit.textContent = streamlitCount;
+    badgeCtd.textContent = ctdCount;
+    badgeNarrative.textContent = narrativeCount;
+    badgePrototypes.textContent = prototypesCount;
+
+
+
   }
 
 
@@ -759,8 +848,8 @@ function updateBadgeCounts() {
 
 
 // Somewhere near the top or before DOMContentLoaded
-const CURRENT_VERSION = "0.1.2";
-const CURRENT_RELEASE_DATE = "1 Feb 2025";
+const CURRENT_VERSION = "0.2.0";
+const CURRENT_RELEASE_DATE = "7 Feb 2025";
 
 
 
@@ -827,10 +916,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 "images/MAID21.png",
                 "images/MAID22.png"
             ],
-              category: ["strategic", "tactical"]
+              category: ["tools", "streamlit", "ctd"]
           },
            {
-            name: "MALL 2 - ScrollyTelling",
+            name: "MALL 2",
             link: "https://mall-scrollytelling.vercel.app/",
             image: "images/project2.png",
             description: "An interactive intelligence reporting platform that transforms static OSINT data into dynamic visualisations, integrating geospatial analysis, network mapping, and multimedia elements to track Subjects of Interest (SOIs) and their activities.",
@@ -844,7 +933,7 @@ document.addEventListener('DOMContentLoaded', function () {
             screenshots: [
                 "images/MALL.png"
             ],
-            category: ["tactical"]
+            category: ["strategic", "mall"]
         },
         {
             name: "WILDCARDS - Most Dangerous Ideas 2025",
@@ -883,7 +972,7 @@ document.addEventListener('DOMContentLoaded', function () {
             screenshots: [
                "images/DI2025WIP.png"
             ],
-            category: ["tactical"]
+            category: ["prototypes"]
            },
            {
             name: "Narrative Analysis",
@@ -900,7 +989,7 @@ document.addEventListener('DOMContentLoaded', function () {
             screenshots: [
               "images/Narrative.png"
             ],
-            category: ["tactical"]
+            category: ["tools", "narrative", "prototypes"]
            },
            {
             name: "Daily Route",
@@ -917,7 +1006,7 @@ document.addEventListener('DOMContentLoaded', function () {
             screenshots: [
                "images/DailyRoute.png"
             ],
-            category: ["tactical"]
+            category: ["tools", "ctd"]
             },
            {
             name: "Pattern of Life",
@@ -934,25 +1023,25 @@ document.addEventListener('DOMContentLoaded', function () {
             screenshots: [
                 "images/PatternofLife.png"
             ],
-             category: ["tactical"]
+             category: ["tactical", "tools", "ctd"]
             },
             {
               name: "Flash Rep",
-                 link: "https://flash-rep.vercel.app/",
+                 link: "https://flash-rep-fix.vercel.app/",
               image: "images/project8.png",
               description: "An interactive flash report system that breaks down emerging technology events through structured analysis, combining narrative timelines, stakeholder networks, and market impact tracking in a navigable intelligence briefing format.",
               tags: ["NextJS", "Frontend", "Backend"],
                 icons: ["nextjs","js"],
-                githubRepo: "https://github.com/WlXPzEqki4/flash_rep",
-                githubClone: "https://github.com/WlXPzEqki4/flash_rep.git",
-                hostedLink: "https://flash-rep.vercel.app/",
-                projectLink: "https://vercel.com/wlxpzeqki4s-projects/flash-rep",
+                githubRepo: "https://github.com/WlXPzEqki4/flash_rep_fix",
+                githubClone: "https://github.com/WlXPzEqki4/flash_rep_fix.git",
+                hostedLink: "https://flash-flash.vercel.app/",
+                projectLink: "https://vercel.com/wlxpzeqki4s-projects/flash-rep-fix",
                 technicalDoc: "",
              screenshots: [
                    "images/Flash_rep.png"
                 ],
-             category: ["strategic"]
-             },
+                category: ["tactical", "new"]
+            },
              {
                 name: "Internal Dashboard",
                    link: "https://landing-liart-tau.vercel.app/",
@@ -971,8 +1060,53 @@ document.addEventListener('DOMContentLoaded', function () {
                 "images/Dash_3.png",
                 "images/Dash_4.png"
             ],
-               category: ["strategic"]
+               category: ["new", "tactical"]
                },
+               {
+                name: "MALL 3",
+                   link: "https://mall3-ctd-demo.vercel.app/",
+                image: "images/MALL3.png",
+                description: "",
+                tags: ["NextJS", "Frontend", "Backend"],
+                  icons: ["nextjs","js"],
+                  githubRepo: "https://github.com/WlXPzEqki4/Mall3_CTD_Demo",
+                  githubClone: "https://github.com/WlXPzEqki4/Mall3_CTD_Demo.git",
+                  hostedLink: "https://mall3-ctd-demo.vercel.app/",
+                  projectLink: "https://vercel.com/wlxpzeqki4s-projects/mall3-ctd-demo",
+                  technicalDoc: "",
+               screenshots: [
+                "images/Dash_1.png",
+                "images/Dash_2.png",
+                "images/Dash_3.png",
+                "images/Dash_4.png"
+            ],
+               category: ["strategic", "mall", "new"]
+               },
+               {
+                name: "MALL 3 CTD 1 WIP",
+                   link: "https://mall3-ctd-wip.vercel.app/",
+                image: "images/MALL3_CTD_WIP.png",
+                description: "",
+                tags: ["NextJS", "Frontend", "Backend"],
+                  icons: ["nextjs","js"],
+                  githubRepo: "https://github.com/WlXPzEqki4/Mall3_CTD_WIP",
+                  githubClone: "https://github.com/WlXPzEqki4/Mall3_CTD_WIP.git",
+                  hostedLink: "https://mall3-ctd-wip.vercel.app/",
+                  projectLink: "https://vercel.com/wlxpzeqki4s-projects/mall3-ctd-wip",
+                  technicalDoc: "",
+               screenshots: [
+                "images/Dash_1.png",
+                "images/Dash_2.png",
+                "images/Dash_3.png",
+                "images/Dash_4.png"
+            ],
+               category: ["mall", "ctd", "prototypes", "new"]
+               },
+
+
+
+
+
       ];
 
     showPage('projectsAllPage');
