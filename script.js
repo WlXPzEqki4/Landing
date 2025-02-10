@@ -2672,8 +2672,8 @@ function updateBadgeCounts() {
 }
 
 // Somewhere near the top or before DOMContentLoaded
-const CURRENT_VERSION = "0.2.1";
-const CURRENT_RELEASE_DATE = "7 Feb 2025";
+const CURRENT_VERSION = "0.2.2";
+const CURRENT_RELEASE_DATE = "10 Feb 2025";
 
 document.addEventListener('DOMContentLoaded', function () {
     // Insert version info
@@ -2929,6 +2929,55 @@ window.projects = [
         ],
         category: ["mall", "ctd", "prototypes", "new"]
     },
+
+
+    
+    {
+        name: "Streamlit News API Interface and analysis",
+        link: "https://appnewsapi2-fksin5dct4gencx5lzrzmz.streamlit.app/",
+        image: "images/Streamlit_narrative_1.png",
+        description: "A Streamlit text analytics tool that uses a variety of NLP libraries to analyse, cluster, and visualise textual data derived from News.API article metadata (only). Supports sentiment analysis, topic modelling, and word cloud generation, and OpenAI’s APIs for further processing.",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/Streamlit_News_API_2",
+        githubClone: "https://github.com/WlXPzEqki4/Streamlit_News_API_2.git",
+        hostedLink: "https://appnewsapi2-fksin5dct4gencx5lzrzmz.streamlit.app/",
+        projectLink: "https://share.streamlit.io/user/WlXPzEqki4",
+        technicalDoc: "",
+        screenshots: [
+            "images/longshot20250210160146.png",
+            "images/longshot20250210160209.png",
+            "images/longshot20250210160335.png",
+            "images/longshot20250210160409.png",
+
+            "images/longshot20250210160439.png",
+            "images/longshot20250210160456.png",
+            "images/longshot20250210160527.png",
+            "images/longshot20250210160630.png"
+
+
+
+        ],
+        category: ["prototypes", "new", "narrative", "streamlit", "tools"]
+    },
+    {
+        name: "Web app News.API Interface",
+        link: "https://news-api-2.vercel.app/",
+        image: "images/WebAppNewsAPI.png",
+        description: "A web app interface to News.API. Validate api key, and search for articles by topic, date, language.  Retrieves and presents 100 articiles, and structures csv downloads of full content and / or article URLs only.",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/News_api_2",
+        githubClone: "https://github.com/WlXPzEqki4/News_api_2.git",
+        hostedLink: "https://news-api-2.vercel.app/",
+        projectLink: "https://vercel.com/wlxpzeqki4s-projects/news-api-2",
+        technicalDoc: "",
+        screenshots: [
+            "images/WebAppNewsAPI.png",
+            "images/WebAppNewsAPI2.png"
+        ],
+        category: ["prototypes", "new", "narrative", "tools"]
+    },
 ];
 
 
@@ -2939,3 +2988,5 @@ window.projects = [
     // Refresh badge numbers
     updateBadgeCounts();
 });
+
+
