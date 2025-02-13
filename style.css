@@ -1303,4 +1303,34 @@ main {
 
 
 
+  #timelineContainer {
+    width: 100%;
+    padding: 2rem;
+    min-height: 300px;
+    background: var(--background-color); /* If using your theming system */
+    /* Additional styling */
+  }
+  
+  .timeline-wrapper {
+    display: flex;
+    position: relative;
+    /* For a horizontal timeline, we can style as a row */
+  }
+  
+  .timeline-event {
+    margin: 0 1rem;
+    padding: 1rem;
+    background: var(--project-item-background);
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* for animation on hover if desired */
+    cursor: pointer;
+  }
+  
+  .timeline-event:hover {
+    transform: scale(1.05);
+  }
+  
+  .date-label {
+    font-weight: bold;
+  }
   

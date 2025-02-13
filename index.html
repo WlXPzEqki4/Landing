@@ -20,12 +20,14 @@
   <div class="container">
     <nav class="sidebar">
       <ul class="nav-items">
+
         <li class="nav-item">
           <a href="#" onclick="showPage('homePage'); return false;">
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
         </li>
+
 
         <li class="nav-item">
           <a href="#" onclick="toggleSubmenu(this); return false;">
@@ -54,6 +56,10 @@
               <span>MALL</span>
               <span class="badge" id="badge-mall">0</span>
             </a>
+            <a href="#" onclick="showPage('projectsItalyPage'); return false;">
+              <span>ITALY</span>
+              <span class="badge" id="badge-italy">0</span>
+            </a>
             <a href="#" onclick="showPage('projectsToolsPage'); return false;">
               <span>Tools</span>
               <span class="badge" id="badge-tools">0</span>
@@ -77,6 +83,8 @@
           </div>
         </li>
 
+
+
         <li class="nav-item">
           <a href="#" onclick="toggleSubmenu(this); showPage('settingsPage'); return false;">
             <i class="fas fa-cog"></i>
@@ -89,12 +97,14 @@
           </div>
         </li>
 
+
+
         <li class="nav-item">
           <a href="#" onclick="showPage('aboutPage'); return false;">
             <i class="fas fa-info-circle"></i>
             <span>About</span>
           </a>
-        </li>
+
 
         <li class="nav-item">
           <a href="#" onclick="toggleSubmenu(this); return false;">
@@ -135,6 +145,11 @@
 
       <div class="page" id="projectsMallPage" style="display: none;">
         <h2>MALL</h2>
+        <div class="project-list"></div>
+      </div>
+
+      <div class="page" id="projectsItalyPage" style="display: none;">
+        <h2>ITALY</h2>
         <div class="project-list"></div>
       </div>
 

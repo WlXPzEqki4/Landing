@@ -1999,9 +1999,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // script.js
 
 let currentlyOpenProject = null;
+
+
 
 // Function to dynamically extract current styles (used for capturing the 'original' styles)
 function getComputedStylesAsObject() {
@@ -2583,6 +2603,10 @@ window.showPage = function (pageId) {
         projectsToShow = window.projects.filter(
             project => project.category?.includes('mall')
         );
+    } else if (pageId === 'projectsItalyPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('italy')
+        );
     } else if (pageId === 'projectsToolsPage') {
         projectsToShow = window.projects.filter(
             project => project.category?.includes('tools')
@@ -2603,7 +2627,30 @@ window.showPage = function (pageId) {
         projectsToShow = window.projects.filter(
             project => project.category?.includes('prototypes')
         );
+    }else if (pageId === 'timelinePage') {
+
+        selectedPage.style.display = 'block';
+
+        // Clear notes panel if open
+        document.querySelector('.notes-panel').classList.remove('active');
+        currentlyOpenProject = null;
+    
+        // Initialise your timeline
+        initTimeline();
+    
+        // Optionally remove or change the home animation:
+        const container = document.getElementById('interactiveContainer');
+        if (container) container.innerHTML = '';
+        return;
+
+
+        
+
     }
+
+
+
+
 
     // 6. Append project cards
     projectsToShow.forEach(project => {
@@ -2642,6 +2689,7 @@ function updateBadgeCounts() {
     const badgeTactical = document.getElementById('badge-tactical');
     const badgeNew = document.getElementById('badge-new');
     const badgeMall = document.getElementById('badge-mall');
+    const badgeItaly = document.getElementById('badge-italy');
     const badgeTools = document.getElementById('badge-tools');
     const badgeStreamlit = document.getElementById('badge-streamlit');
     const badgeCtd = document.getElementById('badge-ctd');
@@ -2653,6 +2701,7 @@ function updateBadgeCounts() {
     const tacticalCount = window.projects.filter(p => p.category?.includes('tactical')).length;
     const newCount = window.projects.filter(p => p.category?.includes('new')).length;
     const mallCount = window.projects.filter(p => p.category?.includes('mall')).length;
+    const italyCount = window.projects.filter(p => p.category?.includes('italy')).length;
     const toolsCount = window.projects.filter(p => p.category?.includes('tools')).length;
     const streamlitCount = window.projects.filter(p => p.category?.includes('streamlit')).length;
     const ctdCount = window.projects.filter(p => p.category?.includes('ctd')).length;
@@ -2664,6 +2713,7 @@ function updateBadgeCounts() {
     badgeTactical.textContent = tacticalCount;
     badgeNew.textContent = newCount;
     badgeMall.textContent = mallCount;
+    badgeItaly.textContent = italyCount;
     badgeTools.textContent = toolsCount;
     badgeStreamlit.textContent = streamlitCount;
     badgeCtd.textContent = ctdCount;
@@ -2672,8 +2722,8 @@ function updateBadgeCounts() {
 }
 
 // Somewhere near the top or before DOMContentLoaded
-const CURRENT_VERSION = "0.2.2";
-const CURRENT_RELEASE_DATE = "10 Feb 2025";
+const CURRENT_VERSION = "0.2.3";
+const CURRENT_RELEASE_DATE = "13 Feb 2025";
 
 document.addEventListener('DOMContentLoaded', function () {
     // Insert version info
@@ -2745,6 +2795,7 @@ window.projects = [
         ],
         category: ["tools", "streamlit", "ctd"]
     },
+
     {
         name: "MALL 2",
         link: "https://mall-scrollytelling.vercel.app/",
@@ -2762,6 +2813,7 @@ window.projects = [
         ],
         category: ["strategic", "mall"]
     },
+
     {
         name: "WILDCARDS - Most Dangerous Ideas 2025",
         link: "https://di-2025.vercel.app/",
@@ -2785,6 +2837,7 @@ window.projects = [
         ],
         category: ["strategic"]
     },
+
     {
         name: "WIP WILDCARDS - Most Dangerous Ideas 2025",
         link: "https://di-2025-wip.vercel.app/",
@@ -2801,6 +2854,7 @@ window.projects = [
         ],
         category: ["prototypes"]
     },
+
     {
         name: "Narrative Analysis",
         link: "https://narrative-six.vercel.app/",
@@ -2818,6 +2872,7 @@ window.projects = [
         ],
         category: ["tools", "narrative", "prototypes"]
     },
+
     {
         name: "Daily Route",
         link: "https://daily-route-viz.vercel.app/",
@@ -2835,6 +2890,7 @@ window.projects = [
         ],
         category: ["tools", "ctd"]
     },
+
     {
         name: "Pattern of Life",
         link: "https://pattern-of-life-viz.vercel.app/",
@@ -2852,6 +2908,7 @@ window.projects = [
         ],
         category: ["tactical", "tools", "ctd"]
     },
+
     {
         name: "Flash Rep",
         link: "https://flash-rep-fix.vercel.app/",
@@ -2869,6 +2926,7 @@ window.projects = [
         ],
         category: ["tactical", "new"]
     },
+
     {
         name: "Internal Dashboard",
         link: "https://landing-liart-tau.vercel.app/",
@@ -2889,6 +2947,7 @@ window.projects = [
         ],
         category: ["new", "tactical"]
     },
+
     {
         name: "MALL 3",
         link: "https://mall3-ctd-demo.vercel.app/",
@@ -2909,6 +2968,7 @@ window.projects = [
         ],
         category: ["strategic", "mall", "new"]
     },
+
     {
         name: "MALL 3 CTD 1 WIP",
         link: "https://mall3-ctd-wip.vercel.app/",
@@ -2930,8 +2990,6 @@ window.projects = [
         category: ["mall", "ctd", "prototypes", "new"]
     },
 
-
-    
     {
         name: "Streamlit News API Interface and analysis",
         link: "https://appnewsapi2-fksin5dct4gencx5lzrzmz.streamlit.app/",
@@ -2954,12 +3012,10 @@ window.projects = [
             "images/longshot20250210160456.png",
             "images/longshot20250210160527.png",
             "images/longshot20250210160630.png"
-
-
-
         ],
         category: ["prototypes", "new", "narrative", "streamlit", "tools"]
     },
+
     {
         name: "Web app News.API Interface",
         link: "https://news-api-2.vercel.app/",
@@ -2978,7 +3034,83 @@ window.projects = [
         ],
         category: ["prototypes", "new", "narrative", "tools"]
     },
+
+    {
+        name: "Italy Snapshot",
+        link: "https://italy-1.vercel.app/",
+        image: "images/Italy_1.png",
+        description: "",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/Italy_1",
+        githubClone: "https://github.com/WlXPzEqki4/Italy_1.git",
+        hostedLink: "https://italy-1.vercel.app/",
+        projectLink: "https://vercel.com/wlxpzeqki4s-projects/italy-1",
+        technicalDoc: "",
+        screenshots: [
+            "images/Italy_page_long.png"
+        ],
+        category: ["italy", "new", "tactical"]
+    },
+
+    {
+        name: "Multiple CDT CSV Descriptive Comparison: Italy",
+        link: "https://github.com/WlXPzEqki4/multiple_PoL_Italy/",
+        image: "images/Italy_multi_csv.png",
+        description: "",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/multiple_PoL_Italy",
+        githubClone: "https://github.com/WlXPzEqki4/multiple_PoL_Italy.git",
+        hostedLink: "https://github.com/WlXPzEqki4/multiple_PoL_Italy",
+        projectLink: "https://vercel.com/wlxpzeqki4s-projects/multiple-po-l-italy",
+        technicalDoc: "",
+        screenshots: [
+            "images/Italy_multiple_csv_long_2.png"
+        ],
+        category: ["italy", "new", "tactical", "tools", "ctd"]
+    },
+
+    {
+        name: "Pattern of Life - Multiple File Handling + LLM",
+        link: "https://multiple-po-l-italy-second.vercel.app/",
+        image: "images/Italy_2_Multiple_PoL.png",
+        description: "",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/multiple_PoL_Italy_second",
+        githubClone: "https://github.com/WlXPzEqki4/multiple_PoL_Italy_second.git",
+        hostedLink: "https://multiple-po-l-italy-second.vercel.app/",
+        projectLink: "https://vercel.com/wlxpzeqki4s-projects/multiple-po-l-italy-second",
+        technicalDoc: "",
+        screenshots: [
+            "images/Italy_PoL_comparison_long_2.png"
+        ],
+        category: ["italy", "new", "tactical", "tools", "ctd"]
+    },
+
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // By default, show All Projects Page
