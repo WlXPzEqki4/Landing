@@ -2021,8 +2021,6 @@
 
 let currentlyOpenProject = null;
 
-
-
 // Function to dynamically extract current styles (used for capturing the 'original' styles)
 function getComputedStylesAsObject() {
     const rootStyles = getComputedStyle(document.documentElement);
@@ -2722,8 +2720,8 @@ function updateBadgeCounts() {
 }
 
 // Somewhere near the top or before DOMContentLoaded
-const CURRENT_VERSION = "0.2.3";
-const CURRENT_RELEASE_DATE = "13 Feb 2025";
+const CURRENT_VERSION = "0.2.9";
+const CURRENT_RELEASE_DATE = "20 Feb 2025";
 
 document.addEventListener('DOMContentLoaded', function () {
     // Insert version info
@@ -3088,6 +3086,24 @@ window.projects = [
         ],
         category: ["italy", "new", "tactical", "tools", "ctd"]
     },
+    {
+        name: "Narrative Analysis Capability",
+        link: "https://narrative-summary.vercel.app/",
+        image: "images/Narrative_Analysis_Cap.png",
+        description: "",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/Narrative_Summary",
+        githubClone: "https://github.com/WlXPzEqki4/Narrative_Summary.git",
+        hostedLink: "https://narrative-summary.vercel.app/",
+        projectLink: "https://vercel.com/wlxpzeqki4s-projects/narrative-summary",
+        technicalDoc: "",
+        screenshots: [
+            "images/Narrative_analysis_cap_long.png"
+        ],
+        category: ["new", "narrative", "tools", "service"]
+    },
+
 
 ];
 
