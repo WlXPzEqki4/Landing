@@ -2625,6 +2625,10 @@ window.showPage = function (pageId) {
         projectsToShow = window.projects.filter(
             project => project.category?.includes('prototypes')
         );
+    } else if (pageId === 'projectsTemplatesPage') {
+        projectsToShow = window.projects.filter(
+            project => project.category?.includes('templates')
+        );
     }else if (pageId === 'timelinePage') {
 
         selectedPage.style.display = 'block';
@@ -2693,6 +2697,8 @@ function updateBadgeCounts() {
     const badgeCtd = document.getElementById('badge-ctd');
     const badgeNarrative = document.getElementById('badge-narrative');
     const badgePrototypes = document.getElementById('badge-prototypes');
+    const badgeTemplates = document.getElementById('badge-templates');
+
 
     const allCount = window.projects.length;
     const strategicCount = window.projects.filter(p => p.category?.includes('strategic')).length;
@@ -2705,6 +2711,8 @@ function updateBadgeCounts() {
     const ctdCount = window.projects.filter(p => p.category?.includes('ctd')).length;
     const narrativeCount = window.projects.filter(p => p.category?.includes('narrative')).length;
     const prototypesCount = window.projects.filter(p => p.category?.includes('prototypes')).length;
+    const templatesCount = window.projects.filter(p => p.category?.includes('templates')).length;
+
 
     badgeAll.textContent = allCount;
     badgeStrategic.textContent = strategicCount;
@@ -2717,6 +2725,8 @@ function updateBadgeCounts() {
     badgeCtd.textContent = ctdCount;
     badgeNarrative.textContent = narrativeCount;
     badgePrototypes.textContent = prototypesCount;
+    badgeTemplates.textContent = templatesCount;
+
 }
 
 // Somewhere near the top or before DOMContentLoaded
@@ -3101,33 +3111,64 @@ window.projects = [
         screenshots: [
             "images/Narrative_analysis_cap_long.png"
         ],
-        category: ["new", "narrative", "tools", "service"]
+        category: ["new", "narrative", "service"]
+    },
+    {
+        name: "Streamlit Bulk URL list site scraper",
+        link: "https://bulk-url-list-site-scraper-ekupggzabzy4u6vm3takle.streamlit.app/",
+        image: "images/Bulk_URL_Scraper.png",
+        description: "",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/Bulk-URL-list-site-scraper",
+        githubClone: "https://github.com/WlXPzEqki4/Bulk-URL-list-site-scraper.git",
+        hostedLink: "https://bulk-url-list-site-scraper-ekupggzabzy4u6vm3takle.streamlit.app/",
+        projectLink: "https://share.streamlit.io/user/WlXPzEqki4",
+        technicalDoc: "",
+        screenshots: [
+            "images/Bulk_URL_Streamlit_long.png"
+        ],
+        category: ["streamlit", "narrative", "tools", "new", "prot"]
+    },
+    {
+        name: "Single full page scrape [NOT WORKING - Needs backend .py server sourced, secured and set up]",
+        link: "https://single-fullpage-scrape.vercel.app/",
+        image: "images/Single_Web_Scraper_LLM.png",
+        description: "",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/Single_fullpage_scrape",
+        githubClone: "https://github.com/WlXPzEqki4/Single_fullpage_scrape.git",
+        hostedLink: "https://single-fullpage-scrape.vercel.app/",
+        projectLink: "https://vercel.com/wlxpzeqki4s-projects/single-fullpage-scrape",
+        technicalDoc: "",
+        screenshots: [
+            "images/Single_Web_Scraper_LLM_long.png"
+        ],
+        category: ["narrative", "tools", "new", "prototypes"]
+
+    },
+    {
+        name: "Templates",
+        link: "https://templates-seven-chi.vercel.app/",
+        image: "images/Templates.png",
+        description: "React, Vite, Tailwind env and 10 demo templates for rapid prototyping.",
+        tags: ["NextJS", "Frontend", "Backend"],
+        icons: ["nextjs","js"],
+        githubRepo: "https://github.com/WlXPzEqki4/templates",
+        githubClone: "https://github.com/WlXPzEqki4/templates.git",
+        hostedLink: "https://templates-seven-chi.vercel.app/",
+        projectLink: "https://vercel.com/wlxpzeqki4s-projects/templates",
+        technicalDoc: "",
+        screenshots: [
+            "images/Templates.png"
+        ],
+        category: ["new", "templates"]
+
     },
 
 
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // By default, show All Projects Page
     //showPage('projectsAllPage');

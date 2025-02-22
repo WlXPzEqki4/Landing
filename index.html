@@ -41,12 +41,62 @@
           <i class="fas fa-lightbulb"></i>  -->
 
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" onclick="showPage('aboutPage'); return false;">
               <i class="fas fa-check-circle"></i>
               <span>Services </span>
-            </a>
+            </a> -->
   
+
+
+            <li class="nav-item">
+              <a href="#" onclick="toggleSubmenu(this); showPage('settingsPage'); return false;">
+                <i class="fas fa-check-circle"></i>
+                <span>Services</span>
+                <i class="fas fa-chevron-down chevron"></i>
+              </a>
+              <div class="submenu">
+                <a href="#"><span>Products</span></a>
+                <a href="#"><span>Services</span></a>
+                <a href="#"><span>DataOps</span></a>
+                <a href="#"><span>AIOps</span></a>
+                <a href="#"><span>Investigative</span></a>
+                <a href="#"><span>Thenatic</span></a>
+                <a href="#"><span>Briefing Types</span></a>
+              </div>
+            </li>
+
+
+
+
+
+
+
+
+
+
+            <li class="nav-item">
+              <a href="#" onclick="showPage('aboutPage'); return false;">
+                <i class="fas fa-chalkboard"></i>
+                <span>Briefings </span>
+              </a>
+
+
+              <li class="nav-item">
+                <a href="#" onclick="showPage('aboutPage'); return false;">
+                  <i class="fas fa-clipboard"></i>
+                  <span>Plans </span>
+                </a>
+
+
+                <li class="nav-item">
+                  <a href="#" onclick="showPage('aboutPage'); return false;">
+                    <i class="fas fa-code-branch"></i>
+                    <span>.ipynb </span>
+                  </a>
+
+
+
 
         <li class="nav-item">
           <a href="#" onclick="toggleSubmenu(this); return false;">
@@ -98,6 +148,10 @@
             <a href="#" onclick="showPage('projectsPrototypesPage'); return false;">
               <span>Prototypes</span>
               <span class="badge" id="badge-prototypes">0</span>
+            </a>
+            <a href="#" onclick="showPage('projectsTemplatesPage'); return false;">
+              <span>Templates</span>
+              <span class="badge" id="badge-templates">0</span>
             </a>
           </div>
         </li>
@@ -212,6 +266,13 @@
         <h2>Prototypes</h2>
         <div class="project-list"></div>
       </div>
+
+      <div class="page" id="projectsTemplatesPage" style="display: none;">
+        <h2>Templates</h2>
+        <div class="project-list"></div>
+      </div>
+
+
     </main>
 
     <!-- HOME PAGE -->

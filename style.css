@@ -3,12 +3,15 @@
     --text-color: #333;
 
     --sidebar-background: #f5f5f5;
+    
     --sidebar-text-color: #4a4a4a;
     --sidebar-text-hover-color: white;
+
     --sidebar-link-color: #666;
     --sidebar-link-hover-color: white;
     --sidebar-submenu-background: transparent;
     --sidebar-submenu-hover-background: #444;
+
     --sidebar-border-color: #e0e0e0;
 
     --view-project-btn-border: #eee;
@@ -149,6 +152,18 @@ body {
 .nav-item > a:hover {
     color: var(--sidebar-link-hover-color);
      background-color: var(--sidebar-submenu-hover-background);
+}
+
+
+/* NEW: This ensures the chevron turns white (or your hover color) too */
+.nav-item > a:hover .chevron {
+    color: var(--sidebar-link-hover-color);
+}
+
+
+/* Icons */
+.nav-item > a:hover i {
+    color: var(--sidebar-link-hover-color);
 }
 
  .nav-item i {
