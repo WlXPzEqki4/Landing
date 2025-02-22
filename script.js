@@ -2730,8 +2730,8 @@ function updateBadgeCounts() {
 }
 
 // Somewhere near the top or before DOMContentLoaded
-const CURRENT_VERSION = "0.2.9";
-const CURRENT_RELEASE_DATE = "20 Feb 2025";
+const CURRENT_VERSION = "0.3";
+const CURRENT_RELEASE_DATE = "23 Feb 2025";
 
 document.addEventListener('DOMContentLoaded', function () {
     // Insert version info
