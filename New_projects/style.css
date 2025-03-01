@@ -691,11 +691,17 @@ body {
     width: 60px;
     transition: width 0.3s ease;
     padding-top: 20px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+
+    overflow-x: hidden; /* keep horizontal hidden if you like */
+    overflow-y: auto;   /* allow vertical scrolling so you can see all items */
     flex-shrink: 0;
-     border-right: 1px solid var(--sidebar-border-color);
+    border-right: 1px solid var(--sidebar-border-color);
  }
 
+
+
+ 
 
 
 .sidebar:hover {
@@ -776,62 +782,6 @@ body {
     transition-delay: 0.2s;
 }
 
-/* .submenu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    margin-left: 45px;
-    position: relative;
-        background-color: var(--sidebar-submenu-background);
-} */
-
-
-
-.submenu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    /* originally margin-left: 45px; can be adjusted if you like */
-    margin-left: 45px;
-    
-    /* NEW: vertical line on the left */
-    border-left: 1px solid var(--sidebar-submenu-border-left);
-    padding-left: 15px; /* so submenu text is a bit indented to the right of the line */
-    position: relative;
-}
-
-
-/* 
-.badge {
-    background-color: #ff0000;
-    color: #fff;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    padding: 2px 8px;
-    margin-left: 8px;
-    display: inline-block;
-    vertical-align: middle;
-  } */
-  
-
-  /* .badge {
-    background-color: #A7B49E; 
-    color: #fff;
-    border-radius: 12px;
-    font-size: 1.0rem;
-    padding: 2px 8px;
-}
- */
-
-
-
-/* .badge {
-    background-color: #A7B49E; 
-    color: #fff;
-    border-radius: 12px;
-    font-size: 1.0rem;
-    padding: 2px 8px;
-} */
 
 
 
@@ -860,25 +810,31 @@ body {
     opacity: 1;
 }
 
+
+
 .nav-item.expanded .submenu {
-    max-height: 500px;
-}
+    /* Instead of a fixed value like 300px, set it high or remove it: */
+    max-height: 99999px; /* effectively no cutoff */
+    overflow: visible;   /* show all items */
+  }
+
+
+
+
+/* Collapsed state */
+.nav-item .submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Keeps a smooth open/close animation */
+  }
+  
+
 
 .nav-item.expanded .chevron {
     transform: rotate(180deg);
 }
 
-/* .submenu a {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #808080;
-    font-size: var(--sidebar-submenu-text-size); 
-    opacity: 0;
-    transition: all 0.2s ease;
-}
- */
+
 
  .submenu a {
     display: flex;             /* turn on flexbox */
