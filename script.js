@@ -4028,8 +4028,8 @@ function updateBadgeCounts() {
 // -------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
     // Insert version info (if these elements exist)
-    const CURRENT_VERSION = "0.3.2";
-    const CURRENT_RELEASE_DATE = "01 Mar 2025";
+    const CURRENT_VERSION = "0.3.3";
+    const CURRENT_RELEASE_DATE = "04 Mar 2025";
 
     const verEl  = document.getElementById("appVersion");
     const dateEl = document.getElementById("releaseDate");
@@ -4542,6 +4542,66 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             category: ["new", "prototypes", "narrative"]
         },
+
+
+        {
+            name: "Sweden_1",
+            link: "https://sweden-3.vercel.app/",
+            image: "images/Sweden_1.png",
+            description: "",
+            tags: ["NextJS", "Frontend", "Backend"],
+            icons: ["nextjs","js"],
+            githubRepo: "https://github.com/WlXPzEqki4/sweden_3",
+            githubClone: "https://github.com/WlXPzEqki4/sweden_3.git",
+            hostedLink: "https://sweden-3.vercel.app/",
+            projectLink: "https://vercel.com/wlxpzeqki4s-projects/sweden-3",
+            technicalDoc: "",
+            screenshots: [
+                "images/Sweden_1.png"
+            ],
+            category: ["new", "prototypes", "Sweden", "country_brief"]
+        },
+
+        {
+            name: "Sweden_2",
+            link: "https://sweden-2.vercel.app/",
+            image: "images/Sweden_2.png",
+            description: "",
+            tags: ["NextJS", "Frontend", "Backend"],
+            icons: ["nextjs","js"],
+            githubRepo: "https://github.com/WlXPzEqki4/sweden_2",
+            githubClone: "https://github.com/WlXPzEqki4/sweden_2.git",
+            hostedLink: "https://sweden-2.vercel.app/",
+            projectLink: "https://vercel.com/wlxpzeqki4s-projects/sweden-2",
+            technicalDoc: "",
+            screenshots: [
+                "images/Sweden_2.png"
+            ],
+            category: ["new", "prototypes", "Sweden", "country_brief"]
+        },
+
+        {
+            name: "Sweden_3",
+            link: "https://modular-scrollytelling-narratives.vercel.app/",
+            image: "images/Sweden_3.png",
+            description: "",
+            tags: ["NextJS", "Frontend", "Backend"],
+            icons: ["nextjs","js"],
+            githubRepo: "https://github.com/WlXPzEqki4/modular-scrollytelling-narratives",
+            githubClone: "https://github.com/WlXPzEqki4/modular-scrollytelling-narratives.git",
+            hostedLink: "https://modular-scrollytelling-narratives.vercel.app/",
+            projectLink: "https://vercel.com/wlxpzeqki4s-projects/modular-scrollytelling-narratives",
+            technicalDoc: "",
+            screenshots: [
+                "images/Sweden_3.png"
+            ],
+            category: ["new", "prototypes", "Sweden", "country_brief"]
+        },
+
+
+
+
+
 
     ];
 
